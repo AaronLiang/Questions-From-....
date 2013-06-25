@@ -1,0 +1,25 @@
+3.  Implement a coin jar in C#. The coin jar will only accept 
+US coinage and has a volume of 32 fluid ounces. Additionally, 
+the jar has a counter to keep track of the total amount of money 
+collected and has the ability to reset the count back to $0.00.
+
+http://stackoverflow.com/questions/13807313/implement-a-coin-jar-in-c-sharp
+
+
+
+=============================================================================
+package iyeTek;
+
+public class CoinJar {
+  public enum Types{
+		ONE_CENT,
+		FIVE_CENT,
+		DIME,
+		QUARTER 
+	}
+	
+	public final static int MAX_VOLUME = 32;
+	
+	
+
+}
