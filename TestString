@@ -1,0 +1,42 @@
+2.  Create a C# class derived from Object and implements the following methods:
+•	AddString – This method should add a given string to an internal collection
+•	ToString – Override this method and return a single, comma-delimited string 
+  containing all the strings in the internal collection
+
+Requirements:
+	Must be thread-safe
+	Must support multiple concurrent readers
+	Must not use any pre-existing thread-safe collections
+	Bonus: don’t use any type of lock
+
+
+
+http://stackoverflow.com/questions/10675400/threadsafe-collection-without-lock
+
+========================================================
+package iyeTek;
+
+import java.util.Vector;
+
+public class TestString {
+  volatile Vector<String> vector;
+	
+	public TestString(){
+		vector = new Vector<String>();
+	}
+	
+	public TestString(String str){
+		vector = new Vector<String>();
+		vector.add(str);
+	}
+	
+	public void addString(String str){
+		vector.add(str);
+	}
+	
+	@Override
+	public String toString(){	
+		return vector.toString();
+	}
+
+}
